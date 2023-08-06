@@ -11,81 +11,91 @@ namespace ShoppingCart.Infrastructure
 
             if (!context.Products.Any())
             {
-                Category fruits = new Category { Name = "Fruits", Slug = "fruits" };
-                Category shirts = new Category { Name = "Shirts", Slug = "shirts" };
+                var phones = new Category { Name = "Phones", Slug = "phones" };
+                var laptops = new Category { Name = "Laptops", Slug = "laptops" };
+                var tv = new Category { Name = "Tv", Slug = "tv" };
 
                 context.Products.AddRange(
                         new Product
                         {
-                            Name = "Apples",
-                            Slug = "apples",
-                            Description = "Juicy apples",
-                            Price = 1.50M,
-                            Category = fruits,
-                            Image = "apples.jpg"
+                            Name = "IPhone 13",
+                            Slug = "iphone13",
+                            Description = "IOS 13",
+                            Price = 1300M,
+                            Category = phones,
+                            Image = "iphone13.jpg"
                         },
                         new Product
                         {
-                            Name = "Bananas",
-                            Slug = "bananas",
-                            Description = "Fresh bananas",
-                            Price = 3M,
-                            Category = fruits,
-                            Image = "bananas.jpg"
+                            Name = "IPhone 14",
+                            Slug = "iphone14",
+                            Description = "IOS 14",
+                            Price = 1700M,
+                            Category = phones,
+                            Image = "iphone14.jpg"
                         },
                         new Product
                         {
-                            Name = "Watermelon",
-                            Slug = "watermelon",
-                            Description = "Juicy watermelon",
-                            Price = 0.50M,
-                            Category = fruits,
-                            Image = "watermelon.jpg"
+                            Name = "IPhone 14 Pro Max",
+                            Slug = "iphone14promax",
+                            Description = "IOS 14",
+                            Price = 2200M,
+                            Category = phones,
+                            Image = "iphone14promax.jpg"
                         },
                         new Product
                         {
-                            Name = "Grapefruit",
-                            Slug = "grapefruit",
-                            Description = "Juicy grapefruit",
-                            Price = 2M,
-                            Category = fruits,
-                            Image = "grapefruit.jpg"
+                            Name = "Asus",
+                            Slug = "Asus",
+                            Description = "18 inch, 16 ram, 512gb SSD",
+                            Price = 2000M,
+                            Category = laptops,
+                            Image = "Asus.jpg"
                         },
                         new Product
                         {
-                            Name = "White shirt",
-                            Slug = "white-shirt",
-                            Description = "White shirt",
-                            Price = 5.99M,
-                            Category = shirts,
-                            Image = "white shirt.jpg"
+                            Name = "Acer",
+                            Slug = "Acer",
+                            Description = "15.6 inch, 8 ram, 512gb SSD",
+                            Price = 1500M,
+                            Category = laptops,
+                            Image = "Acer.jpg"
                         },
                         new Product
                         {
-                            Name = "Black shirt",
-                            Slug = "black-shirt",
-                            Description = "Black shirt",
-                            Price = 7.99M,
-                            Category = shirts,
-                            Image = "black shirt.jpg"
+                            Name = "Mac",
+                            Slug = "Mac",
+                            Description = "14 inch, 16 ram, 512gb SSD",
+                            Price = 3000M,
+                            Category = laptops,
+                            Image = "Mac.jpg"
                         },
                         new Product
                         {
-                            Name = "Yellow shirt",
-                            Slug = "yellow-shirt",
-                            Description = "Yellow shirt",
-                            Price = 11.99M,
-                            Category = shirts,
-                            Image = "yellow shirt.jpg"
+                            Name = "Samsung",
+                            Slug = "Samsung42",
+                            Description = "42 inch",
+                            Price = 600M,
+                            Category = tv,
+                            Image = "Samsung42.jpg"
                         },
                         new Product
                         {
-                            Name = "Grey shirt",
-                            Slug = "grey-shirt",
-                            Description = "Grey shirt",
-                            Price = 12.99M,
-                            Category = shirts,
-                            Image = "grey shirt.jpg"
+                            Name = "Sony",
+                            Slug = "Sony",
+                            Description = "50 inch",
+                            Price = 750M,
+                            Category = tv,
+                            Image = "Sony.jpg"
+                        },
+                        new Product
+                        {
+                            Name = "Samsung",
+                            Slug = "Samsung65",
+                            Description = "65 inch",
+                            Price = 900M,
+                            Category = tv,
+                            Image = "Samsung65.jpg"
                         }
                 );
 

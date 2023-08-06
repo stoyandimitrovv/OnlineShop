@@ -1,6 +1,0 @@
-![Alt Text](https://raw.githubusercontent.com/stoyandimitrovv/OnlineShop/main/Screenshot-2023-08-06-191550.png)
-![Alt Text](https://raw.githubusercontent.com/stoyandimitrovv/OnlineShop/main/Screenshot-2023-08-06-191606.png)
-![Alt Text](https://raw.githubusercontent.com/stoyandimitrovv/OnlineShop/main/Screenshot-2023-08-06-191631.png)
-![Alt Text](https://raw.githubusercontent.com/stoyandimitrovv/OnlineShop/main/Screenshot-2023-08-06-191653.png)
-![Alt Text](https://raw.githubusercontent.com/stoyandimitrovv/OnlineShop/main/Screenshot-2023-08-06-191714.png)
-![Alt Text](https://raw.githubusercontent.com/stoyandimitrovv/OnlineShop/main/Screenshot-2023-08-06-191732.png)

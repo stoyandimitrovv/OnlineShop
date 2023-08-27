@@ -19,7 +19,7 @@
             <td>@user.Email</td>
             <td>@user.UserName</td>
             <td>
-                @using (Html.BeginForm("Delete", "Account", new { id = user.Id }, FormMethod.Post))
+                @using (Html.BeginForm("Delete", "Account", new { userId = user.Id }, FormMethod.Post))
                 {
                     <button type="submit" class="btn btn-danger">Delete</button>
                 }

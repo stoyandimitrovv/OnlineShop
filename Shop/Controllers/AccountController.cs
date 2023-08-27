@@ -66,6 +66,8 @@ namespace ShoppingCart.Controllers
         {
             await _signInManager.SignOutAsync();
 
+            HttpContext.Session.Clear();
+
             return Redirect(returnUrl);
         }
 
@@ -81,7 +83,7 @@ namespace ShoppingCart.Controllers
         public async Task<IActionResult> Delete(string userId)
         {
             var user = await _userManager.FindByIdAsync(userId);
-            var result = await _userManager.DeleteAsync(user);
+            await _userManager.DeleteAsync(user);
 
             return RedirectToAction("Index");
         }

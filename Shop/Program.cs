@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ShoppingCart.Infrastructure;
 using ShoppingCart.Models;
+using ShoppingCart.Services;
+using ShoppingCart.Services.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,7 @@ builder.Services.AddDbContext<DataContext>(options =>
 });
 
 builder.Services.AddDistributedMemoryCache();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 builder.Services.AddSession(options =>
 {

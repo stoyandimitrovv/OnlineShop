@@ -1,39 +1,125 @@
 ﻿@model IEnumerable<Product>
 
 @{
-        ViewData["Title"] = "Products";
+    ViewData["Title"] = "Products";
 }
 
 <h1>Products</h1>
 
 <div class="row">
-        @foreach (var item in Model)
-        {
-                <div class="col-4">
-                        <img src="/media/products/@item.Image" class="img-fluid" alt="" />
-                        <h4>@item.Name</h4>
-                        <div>
-                                @Html.Raw(item.Description)
-                        </div>
-                        <p>
-                                @item.Price.ToString("C2")
-                        </p>
-                        <p>
-                                <a class="btn btn-primary" asp-controller="Cart" asp-action="Add" asp-route-id="@item.Id">Add to cart</a>
-                        </p>
+    @foreach (var item in Model)
+    {
+        <div class="col-4">
+            <img src="/media/products/@item.Image" class="img-fluid" alt="" />
+            <h4>@item.Name</h4>
+            <div>
+                @Html.Raw(item.Description)
+            </div>
+            <p>
+                @item.Price.ToString("C2")
+            </p>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <p>Your Rating:</p>
+                <div class="star-rating">
+                    <form method="post" asp-controller="Products" asp-action="RateProduct" asp-route-id="@item.Id">
+                        @if (item.Rating == 1)
+                        {
+                            <input type="radio" name="rating" value="1" id="star1_@item.Id" checked>
+                            <label for="star1_@item.Id"></label>
+                            <input type="radio" name="rating" value="2" id="star2_@item.Id">
+                            <label for="star2_@item.Id"></label>
+                            <input type="radio" name="rating" value="3" id="star3_@item.Id">
+                            <label for="star3_@item.Id"></label>
+                            <input type="radio" name="rating" value="4" id="star4_@item.Id">
+                            <label for="star4_@item.Id"></label>
+                            <input type="radio" name="rating" value="5" id="star5_@item.Id">
+                            <label for="star5_@item.Id"></label>
+                        }
+                        else if(item.Rating == 2)
+                        {
+                            <input type="radio" name="rating" value="1" id="star1_@item.Id">
+                            <label for="star1_@item.Id"></label>
+                            <input type="radio" name="rating" value="2" id="star2_@item.Id" checked>
+                            <label for="star2_@item.Id"></label>
+                            <input type="radio" name="rating" value="3" id="star3_@item.Id">
+                            <label for="star3_@item.Id"></label>
+                            <input type="radio" name="rating" value="4" id="star4_@item.Id">
+                            <label for="star4_@item.Id"></label>
+                            <input type="radio" name="rating" value="5" id="star5_@item.Id">
+                            <label for="star5_@item.Id"></label>
+                        }
+                        else if (item.Rating == 3)
+                        {
+                            <input type="radio" name="rating" value="1" id="star1_@item.Id">
+                            <label for="star1_@item.Id"></label>
+                            <input type="radio" name="rating" value="2" id="star2_@item.Id">
+                            <label for="star2_@item.Id"></label>
+                            <input type="radio" name="rating" value="3" id="star3_@item.Id" checked>
+                            <label for="star3_@item.Id"></label>
+                            <input type="radio" name="rating" value="4" id="star4_@item.Id">
+                            <label for="star4_@item.Id"></label>
+                            <input type="radio" name="rating" value="5" id="star5_@item.Id">
+                            <label for="star5_@item.Id"></label>
+                        }else if(item.Rating == 4)
+                        {
+                            <input type="radio" name="rating" value="1" id="star1_@item.Id">
+                            <label for="star1_@item.Id"></label>
+                            <input type="radio" name="rating" value="2" id="star2_@item.Id">
+                            <label for="star2_@item.Id"></label>
+                            <input type="radio" name="rating" value="3" id="star3_@item.Id">
+                            <label for="star3_@item.Id"></label>
+                            <input type="radio" name="rating" value="4" id="star4_@item.Id" checked>
+                            <label for="star4_@item.Id"></label>
+                            <input type="radio" name="rating" value="5" id="star5_@item.Id">
+                            <label for="star5_@item.Id"></label>
+                        }
+                        else if (item.Rating == 5)
+                        {
+                            <input type="radio" name="rating" value="1" id="star1_@item.Id">
+                            <label for="star1_@item.Id"></label>
+                            <input type="radio" name="rating" value="2" id="star2_@item.Id">
+                            <label for="star2_@item.Id"></label>
+                            <input type="radio" name="rating" value="3" id="star3_@item.Id">
+                            <label for="star3_@item.Id"></label>
+                            <input type="radio" name="rating" value="4" id="star4_@item.Id">
+                            <label for="star4_@item.Id"></label>
+                            <input type="radio" name="rating" value="5" id="star5_@item.Id" checked>
+                            <label for="star5_@item.Id"></label>
+                        }
+                        else
+                        {
+                            <input type="radio" name="rating" value="1" id="star1_@item.Id">
+                            <label for="star1_@item.Id"></label>
+                            <input type="radio" name="rating" value="2" id="star2_@item.Id">
+                            <label for="star2_@item.Id"></label>
+                            <input type="radio" name="rating" value="3" id="star3_@item.Id">
+                            <label for="star3_@item.Id"></label>
+                            <input type="radio" name="rating" value="4" id="star4_@item.Id">
+                            <label for="star4_@item.Id"></label>
+                            <input type="radio" name="rating" value="5" id="star5_@item.Id">
+                            <label for="star5_@item.Id"></label>
+                        }
+                        <button type="submit" class="btn btn-primary">Rate product</button>
+                    </form>
                 </div>
-        }
+                <p>
+                    <a class="btn btn-primary" asp-controller="Cart" asp-action="Add" asp-route-id="@item.Id">Add to cart</a>
+                </p>
+            }
+        </div>
+    }
 
 
-        @if (ViewBag.TotalPages > 1)
-        {
-                <div class="d-flex w-100 justify-content-center">
-                        <pagination page-count="@ViewBag.TotalPages"
-                            page-target="/products/@ViewBag.CategorySlug"
-                            page-number="@ViewBag.PageNumber"
-                            page-range="@ViewBag.PageRange">
-                        </pagination>
-                </div>
-        }
+    @if (ViewBag.TotalPages > 1)
+    {
+        <div class="d-flex w-100 justify-content-center">
+            <pagination page-count="@ViewBag.TotalPages"
+                        page-target="/products/@ViewBag.CategorySlug"
+                        page-number="@ViewBag.PageNumber"
+                        page-range="@ViewBag.PageRange">
+            </pagination>
+        </div>
+    }
 
 </div>

@@ -16,3 +16,36 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.star-rating {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1;
+    direction: rtl; /* Set direction to right-to-left */
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    color: #ccc;
+    cursor: pointer;
+    margin: 0 2px;
+}
+
+.star-rating label:before {
+    content: '\2605'; /* Unicode character for a star */
+}
+
+.star-rating input:checked ~ label {
+    color: #f39c12; /* Color for unselected stars */
+}
+
+.star-rating input:checked ~ label:after {
+    color: #f39c12; /* Color for selected stars */
+}
+
+.btn btn-primary {
+    margin-left: auto;
+}

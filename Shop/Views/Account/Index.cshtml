@@ -1,0 +1,30 @@
+﻿@model List<AppUser>
+
+<h1>User List</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.Id</td>
+            <td>@user.Email</td>
+            <td>@user.UserName</td>
+            <td>
+                @using (Html.BeginForm("Delete", "Account", new { id = user.Id }, FormMethod.Post))
+                {
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -29,7 +29,7 @@ namespace ShoppingCart.Controllers
 
                 if (result.Succeeded)
                 {
-                    return Redirect("/admin/products");
+                    return Redirect("/");
                 }
 
                 foreach (IdentityError error in result.Errors)

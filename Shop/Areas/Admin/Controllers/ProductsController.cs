@@ -86,13 +86,6 @@ namespace ShoppingCart.Areas.Admin.Controllers
             {
                 product.Slug = product.Name.ToLower().Replace(" ", "-");
 
-                var slug = await _context.Products.FirstOrDefaultAsync(p => p.Slug == product.Slug);
-                if (slug != null)
-                {
-                    ModelState.AddModelError("", "The product already exists.");
-                    return View(product);
-                }
-
                 await _productService.Update(product);
 
                 TempData["Success"] = "The product has been edited!";
